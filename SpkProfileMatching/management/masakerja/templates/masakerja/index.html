@@ -1,0 +1,29 @@
+{% extends 'layout/dashboard/index.html' %} {% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+           Hasil Nilai Masa Kerja
+            <small>Template</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Hasil Nilai Masa Kerja</a></li>
+            <li class="active">Template</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            {% comment %} <div class="col-sm-4">
+                {% include 'dosen/form.html' %}
+            </div> {% endcomment %}
+
+            <div class="col-sm-12">
+                {% include 'masakerja/table.html' %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $('#example1').DataTable();
+</script>
+{% endblock %}
