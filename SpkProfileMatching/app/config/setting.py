@@ -22,6 +22,7 @@ PROJECT_APPS = [
     'management.pendidikanterakhir',
     'management.prilaku',
     'management.sikapkerja',
+    'management.perangkingan',
 ]
 
 

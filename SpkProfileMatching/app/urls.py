@@ -24,6 +24,13 @@ urlpatterns = [
     url(r'^karyawan/', include('management.karyawan.urls', namespace='karyawan')),
     url(r'^kecerdasan/', include('management.kecerdasan.urls', namespace='kecerdasan')),
     url(r'^masakerja/', include('management.masakerja.urls', namespace='masakerja')),
+    url(r'^pendidikanterakhir/', include('management.pendidikanterakhir.urls', namespace='pendidikanterakhir')),
+    url(r'^prilaku/', include('management.prilaku.urls', namespace='prilaku')),
+    url(r'^sikapkerja/', include('management.sikapkerja.urls', namespace='sikapkerja')),
+    url(r'^perangkingan/', include('management.perangkingan.urls', namespace='perangkingan')),
+
+
+
 
 
 ]

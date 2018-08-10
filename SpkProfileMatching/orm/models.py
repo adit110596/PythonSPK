@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 import time
 import os
 
+
+
 class Karyawan(models.Model):
     # user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True) 
     nama = models.CharField(max_length=100, blank=True, null=True)
@@ -109,6 +111,10 @@ class SikapKerja(models.Model):
     class Meta:
         db_table = 'sikapkerja'
         ordering = ['id'] 
+
+
+class PDF(models.Model):
+    pdf = models.FileField(upload_to='pdffiles/', blank=True, null=True)
 
 
 

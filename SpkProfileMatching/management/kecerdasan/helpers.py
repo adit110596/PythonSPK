@@ -79,4 +79,85 @@ def CfKecerdasan(krywn):
     new = pd.concat([dfcfkrn, pb], axis=1)
     return new
 
+def SfKecerdasan(krywn):
+    sfkrn = {'nama': [a.nama for a in krywn]}
+    dfsfkrn = pd.DataFrame(data=sfkrn)    
+    target = [3,3]
+    cols =['konsentrasi','antisipasi']
+    sf = {
+        cols[0] : [int(a.kecerdasans.konsentrasi) for a in krywn],
+        cols[1] : [int(a.kecerdasans.antisipasi) for a in krywn],
+    }
+    dfsf = pd.DataFrame(data=sf)
+    gap = get_gap(dfsf, target)
+    pb = pembobotan(gap, cols)
+    new = pd.concat([dfsfkrn, pb], axis=1)
+    return new
 
+def NiCfKecerdasan(krywn):
+    
+    cfkrn = {'nama': [a.nama for a in krywn]}
+    dfcfkrn = pd.DataFrame(data=cfkrn)
+    
+    target = [4, 4, 5]
+    cols =['sistematika_berfikir','logika_praktis','imajinasi_kreatif']
+    cf = {
+        cols[0] : [int(a.kecerdasans.sistematika_berfikir) for a in krywn],
+        cols[1] : [int(a.kecerdasans.logika_praktis) for a in krywn],
+        cols[2] : [int(a.kecerdasans.imajinasi_kreatif) for a in krywn],
+    }
+    dfcf = pd.DataFrame(data=cf)
+
+    gap = get_gap(dfcf, target)
+    pb = pembobotan(gap, cols)
+    total = get_cfsf(pb)
+    new = pd.concat([dfcfkrn, total], axis=1)
+    return new
+
+def NiSfKecerdasan(krywn):
+       
+    sfkrn = {'nama': [a.nama for a in krywn]}
+    dfsfkrn = pd.DataFrame(data=sfkrn)    
+    target = [3,3]
+    cols =['konsentrasi','antisipasi']
+    sf = {
+        cols[0] : [int(a.kecerdasans.konsentrasi) for a in krywn],
+        cols[1] : [int(a.kecerdasans.antisipasi) for a in krywn],
+    }
+    dfsf = pd.DataFrame(data=sf)
+    gap = get_gap(dfsf, target)
+    pb = pembobotan(gap, cols)
+    total = get_cfsf(pb)
+    new = pd.concat([dfsfkrn, total], axis=1)
+    return new
+
+
+def TotalKec(krywn):
+    krn = {'nama': [a.nama for a in krywn]}
+    dfkrn = pd.DataFrame(data=krn)
+
+    targetcf = [4, 4, 5]
+    colscf =['sistematika_berfikir','logika_praktis','imajinasi_kreatif']
+    cf = {
+        colscf[0] : [int(a.kecerdasans.sistematika_berfikir) for a in krywn],
+        colscf[1] : [int(a.kecerdasans.logika_praktis) for a in krywn],
+        colscf[2] : [int(a.kecerdasans.imajinasi_kreatif) for a in krywn],
+    }
+    dfcf = pd.DataFrame(data=cf)
+    gapcf = get_gap(dfcf, targetcf)
+    pbcf = pembobotan(gapcf, colscf)
+    totalcf = get_cfsf(pbcf)
+    
+    targetsf = [3,3]
+    colssf =['konsentrasi','antisipasi']
+    sf = {
+        colssf[0] : [int(a.kecerdasans.konsentrasi) for a in krywn],
+        colssf[1] : [int(a.kecerdasans.antisipasi) for a in krywn],
+    }
+    dfsf = pd.DataFrame(data=sf)
+    gapsf = get_gap(dfsf, targetsf)
+    pbsf = pembobotan(gapsf, colssf)
+    totalsf = get_cfsf(pbsf)
+    total = result(totalcf, totalsf)
+    new = pd.concat([dfkrn, total], axis=1)
+    return new
