@@ -16,11 +16,6 @@
         <div class="box-body">
             <div class="box-header">
                 <h3 class="box-title">Nilai Total</h3>
-                <div align="right">
-                        <a href="print.html">
-                           <button class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-                        </a>
-                    </div>
             </div>
           
             <table id="example1" class="table table-bordered table-striped">
@@ -50,6 +45,10 @@
 </div>
 
 <script type="text/javascript">
-    $('#example1').DataTable();
+    $(document).ready(function() {
+        $('#example1').DataTable( {
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50,]]
+        } );
+    } );
 </script>
 {% endblock %}

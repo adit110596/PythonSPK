@@ -3,9 +3,11 @@ from django.views.generic import View
 from django.http import HttpResponse
 from django.contrib import messages
 
-import pandas as pd
 from orm.models import Karyawan, Kecerdasan, MasaKerja, PendidikanTerakhir, Prilaku, SikapKerja 
+import pandas as pd
+
 from management.perangkingan import helpers
+
 from reportlab.pdfgen import canvas
 from django.template.loader import get_template
 

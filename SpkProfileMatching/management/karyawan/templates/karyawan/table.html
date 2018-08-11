@@ -13,7 +13,6 @@
                     <th>Jenis Kelamin</th>
                     <th>Tanggal lahir</th>
                     <th>Agama</th>
-                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,35 +25,6 @@
                     <td>{{kr.jenis_kelamin}}</td>
                     <td>{{kr.born_date}}</td>
                     <td>{{kr.agama}}</td>
-                    <td>
-
-                        <a href="#" class="btn btn-warning">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        <button class="btn btn-danger" data-toggle="modal" data-target="">
-<i class="fa fa-trash"></i>
-</button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog modal-md" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Konfirmasi Penghapusan</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-                                        <a href="#" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i> Hapus
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

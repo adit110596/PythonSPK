@@ -42,13 +42,22 @@
                 <p class='title'>Report Perangkingan </p>
             </div>
         <div>
+            <table class="details" border="1">
+                <thead>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Rangking</th>
+                </thead>
+                <tbody>
                 {% for c in nl %}
-        <div class='details'>
-            Nama: {{c.0}}<br/>
-            Hasil Perangkingan: {{c.1}}  <br/>
-            <hr class='hrItem' />
-        </div>
+                    <tr>
+                        <td align="center">{{forloop.counter}}</td>
+                        <td>{{c.0}}</td>
+                        <td>{{c.1}}</td>
+                    </tr>
                 {% endfor %}
+                </tbody>
+            </table>
     </div>
     </body>
 </html>
